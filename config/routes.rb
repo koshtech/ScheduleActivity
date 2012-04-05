@@ -1,10 +1,11 @@
 ScheduleActivity::Application.routes.draw do
-  get "activities/new"
+  root :to => 'activities#home'
 
+  get "activities/new"
   get "activities/home"
 
-  match 'activities/' => 'activities#home'
-
+  match 'activities' => 'activities#home'
+  match 'reservas' => 'activities#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
