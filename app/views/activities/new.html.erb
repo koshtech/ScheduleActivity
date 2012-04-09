@@ -1,2 +1,24 @@
-<h1>Activities#new</h1>
-<p>Find me in app/views/activities/new.html.erb</p>
+<h1>Faça aqui a sua reserva de torta</h1>
+
+<div class="row">
+	<div class="span6 offset">
+		<%= form_for(@activity) do |f| %>
+			<%= f.label :product %>
+			<%= f.text_field :product %> <br>
+			<%= f.label :date %>
+			<%= f.text_field :date %> <br>
+			<%= f.label :time %>
+			<%= f.text_field :time %> <br>
+			<%= f.label :clientName %>
+			<%= f.text_field :clientName %> <br>
+			<%= f.label :clientAddress %>
+			<%= f.text_field :clientAddress %> <br>
+			<%= f.label :clientTelephone %>
+			<%= f.text_field :clientTelephone %> <br>
+			<%= f.label :clientEmail %>
+			<%= f.text_field :clientEmail %> <br>
+
+			<%= f.submit "Criar reserva",  class: "btn btn-large btn-primary" %> 
+		<% end %>
+	</div>
+</div>
