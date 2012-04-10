@@ -6,7 +6,7 @@ class Activity < ActiveRecord::Base
   validates :clientEmail, presence: true, format: {with: VALID_EMAIL_REGEX}
   validates :clientName, presence: true
   validates :clientTelephone, presence: true 
+  validates :product, presence: true, message: "teste"
   validates :date, presence: true
-  validates :product, presence: true
   validates :time, presence: true
 end

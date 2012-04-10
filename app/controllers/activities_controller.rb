@@ -7,10 +7,14 @@ class ActivitiesController < ApplicationController
   def create
 	@activity = Activity.new(params[:activity])
   	if @activity.save
-  		#ok, sucessful message
+  		redirect_to  :new/
   	else
-  		render 'new'
+  		render :new
   	end
+  end
+
+  def show
+      @activities = Activity.all
   end
 
   def home

@@ -15,19 +15,19 @@
 <div class="row">
 	<div class="span6 offset">
 		<%= form_for(@activity) do |f| %>
-			<%= f.label :product %>
+			Sabor da torta: <br>
 			<%= f.text_field :product %> <br>
-			<%= f.label :date %>
+			Data da entrega: <br>
 			<%= f.text_field :date %> <br>
-			<%= f.label :time %>
+			Hora da entrega: <br>
 			<%= f.text_field :time %> <br>
-			<%= f.label :clientName %>
+			Seu nome: <br>
 			<%= f.text_field :clientName %> <br>
-			<%= f.label :clientAddress %>
+			Seu endereço <br>
 			<%= f.text_field :clientAddress %> <br>
-			<%= f.label :clientTelephone %>
+			Seu telefone de contato: <br>
 			<%= f.text_field :clientTelephone %> <br>
-			<%= f.label :clientEmail %>
+			Seu email: <br>
 			<%= f.text_field :clientEmail %> <br>
 
 			<%= f.submit "Criar reserva",  class: "btn btn-large btn-primary" %> 

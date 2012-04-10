@@ -22,7 +22,13 @@ describe "Activities" do
       end
 
     end
-  
+  end
+
+  describe "show activities" do
+    let(:activity) { FactoryGirl.create(:activity) }
+    before { visit listagem_path(activity) }
+    
+    it { should have_selector('h2', text: activity.product) }
   end
 
 end
