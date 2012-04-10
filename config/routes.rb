@@ -1,8 +1,12 @@
 ScheduleActivity::Application.routes.draw do
 
   resource :activities
-  match 'reservas' => 'activities#new', :as => :reservas
-  match 'listagem' => 'activities#show', :as => :listagem, :via => 'get'
+  resource :products
+
+  match 'reservas'     => 'activities#new',  :as   => :reservas
+  match 'listagem'     => 'activities#show', :as   => :listagem,     :via => 'get'
+  match 'sabores'      => 'products#new',    :as   => :sabores
+  match 'listasabores' => 'products#show',   :as   => :listasabores, :via => 'get'
 
   root :to => 'activities#home'
 

@@ -1,0 +1,26 @@
+<h1>Cadastro de sabor de tortas</h1>
+<% if @product.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error">
+      The form contains <%= pluralize(@product.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li>* <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="row">
+	<div class="span6 offset">
+		<%= form_for(@product) do |f|  %>
+			Sabor da torta: 
+			<%= f.text_field :flavor %><br>
+			Descricao: 
+			<%=	f.text_field :description %><br>
+
+			<%= f.submit "Criar sabor",  class: "btn btn-large btn-primary" %> 
+		<% end %>
+	</div>
+</div>

@@ -15,24 +15,24 @@
 <div class="row">
 	<div class="span6 offset">
 		<%= form_for(@activity) do |f| %>
-			Sabor da torta: <br>
+			Sabor da torta: 
 			<%= f.text_field :product %> <br>
-			Data da entrega: <br>
+			Data da entrega: 
 			<%= f.date_select :date, 
 							  :use_month_numbers => true,
 							  :order => [:day, :month, :year],
 							  :default => Time.now,
 							  :start_year => 2012,
 							  :end_year => Time.now.year + 1 %> <br>
-			Hora da entrega: <br>
+			Hora da entrega: 
 			<%= f.time_select :time %> <br>
-			Seu nome: <br>
+			Seu nome: 
 			<%= f.text_field :clientName %> <br>
-			Seu endereço <br>
+			Seu endereço 
 			<%= f.text_field :clientAddress %> <br>
-			Seu telefone de contato: <br>
+			Seu telefone de contato: 
 			<%= f.text_field :clientTelephone %> <br>
-			Seu email: <br>
+			Seu email: 
 			<%= f.text_field :clientEmail %> <br>
 
 			<%= f.submit "Criar reserva",  class: "btn btn-large btn-primary" %> 

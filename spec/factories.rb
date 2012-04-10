@@ -8,4 +8,8 @@
 	    clientTelephone  "12345678"
 	    clientEmail      "ze@ze.com.br"
 	end
+	factory :product do
+		flavor      "Tangerina"
+		description "Tangerina com calda caramelada"
+	end
 end

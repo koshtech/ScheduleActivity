@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
   def create
 	@activity = Activity.new(params[:activity])
   	if @activity.save
-  		redirect_to  :new
+  		redirect_to  root_path
   	else
   		render :new
   	end
