@@ -18,9 +18,14 @@
 			Sabor da torta: <br>
 			<%= f.text_field :product %> <br>
 			Data da entrega: <br>
-			<%= f.text_field :date %> <br>
+			<%= f.date_select :date, 
+							  :use_month_numbers => true,
+							  :order => [:day, :month, :year],
+							  :default => Time.now,
+							  :start_year => 2012,
+							  :end_year => Time.now.year + 1 %> <br>
 			Hora da entrega: <br>
-			<%= f.text_field :time %> <br>
+			<%= f.time_select :time %> <br>
 			Seu nome: <br>
 			<%= f.text_field :clientName %> <br>
 			Seu endereço <br>

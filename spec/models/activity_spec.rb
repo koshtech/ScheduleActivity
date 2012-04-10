@@ -41,4 +41,23 @@ describe Activity do
     end
   end
 
+  describe "when telephone format is invalid" do
+  	it "should be invalid" do
+	  	telephones = %w[1234, 1234567890]
+	  	telephones.each do |invalid_telephone|
+	  		@activity.clientTelephone = invalid_telephone
+	  		@activity.should_not be_valid
+	  	end
+  	end
+  end
+
+  describe "when telephone format is valid" do
+  	it "should be valid" do
+  		telephones = %w[12345678, 97653214]
+  		telephones.each do |valid_telephone|
+  			@activity.clientTelephone = valid_telephone
+  			@activity.should be_valid
+  		end
+  	end
+  end
 end

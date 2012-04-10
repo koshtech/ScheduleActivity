@@ -1,12 +1,13 @@
 class Activity < ActiveRecord::Base
   attr_accessible :clientAddress, :clientEmail, :clientName, :clientTelephone, :date, :product, :time
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+ 
 
   validates :clientAddress, presence: true
   validates :clientEmail, presence: true, format: {with: VALID_EMAIL_REGEX}
   validates :clientName, presence: true
-  validates :clientTelephone, presence: true 
-  validates :product, presence: true, message: "teste"
+  validates :clientTelephone, presence: true, length: {maximum: 8, minimum: 8} 
+  validates :product, presence: true
   validates :date, presence: true
   validates :time, presence: true
 end
