@@ -4,22 +4,22 @@ describe Activity do
 	before do
 		@activity                 = Activity.new
 		@activity.product         = "Torta"
-		@activity.date            = "12/12/2012"
-		@activity.time            = "15:30"
+		@activity.date_time       = "2012-04-12 15:30"
 		@activity.clientName      = "Anna"
 		@activity.clientAddress   = "Rua das Couves"
 		@activity.clientTelephone = "12345678"
 		@activity.clientEmail     = "anna@anna.com"
+    @activity.productQuantity = "8"
 	end
 
 	subject { @activity }
 	it { should respond_to(:product) }
-	it { should respond_to(:date) }
-	it { should respond_to(:time) }
+	it { should respond_to(:date_time) }
 	it { should respond_to(:clientName) }
 	it { should respond_to(:clientAddress) }
 	it { should respond_to(:clientTelephone) }
 	it { should respond_to(:clientEmail) }
+  it { should respond_to(:productQuantity) }
 
 	describe "when email format is invalid" do
     it "should be invalid" do

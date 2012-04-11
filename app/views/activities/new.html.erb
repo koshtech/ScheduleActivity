@@ -5,7 +5,7 @@
       The form contains <%= pluralize(@activity.errors.count, "error") %>.
     </div>
     <ul>
-    <% @activity.errors.full_messages.each do |msg| %>
+    <% @activity.errors.each do |attr, msg| %>
       <li>* <%= msg %></li>
     <% end %>
     </ul>
@@ -16,16 +16,18 @@
 	<div class="span6 offset">
 		<%= form_for(@activity) do |f| %>
 			Sabor da torta: 
-			<%= f.text_field :product %> <br>
-			Data da entrega: 
-			<%= f.date_select :date, 
+			<%= f.collection_select(:product, @products, :id, :flavor, {:prompt => ''}, {:required => true}) %>
+			<br>
+			Quantidade de tortas:
+			<%= f.text_field :productQuantity %>
+			Data e hora da entrega: 
+			<%= f.datetime_select :date_time, 
 							  :use_month_numbers => true,
 							  :order => [:day, :month, :year],
 							  :default => Time.now,
 							  :start_year => 2012,
-							  :end_year => Time.now.year + 1 %> <br>
-			Hora da entrega: 
-			<%= f.time_select :time %> <br>
+							  :end_year => Time.now.year + 1,
+							  :start_time => Time.now %> <br>
 			Seu nome: 
 			<%= f.text_field :clientName %> <br>
 			Seu endereço 

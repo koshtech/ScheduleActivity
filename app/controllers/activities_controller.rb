@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
   respond_to :html, :xml, :json
   def new
   	@activity = Activity.new
+    @products = Product.all
   end
 
   def create
