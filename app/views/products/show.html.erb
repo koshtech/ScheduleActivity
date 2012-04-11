@@ -1,5 +1,7 @@
-<h1>Listagem de sabores cadastrados</h1>
+<h1>Listagem de sabores de torta disponiveis</h1>
+<br>
 <% @products.each do |product| %>
-	<h2><%= product.flavor %></h2><br>
-	<h2><%= product.description %></h2>
+	<h2>Torta de <%= product.flavor %></h2>
+	<h3>Descricao: <%= product.description %></h3>
+	<br><br>
 <% end %>

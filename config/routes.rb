@@ -7,7 +7,9 @@ ScheduleActivity::Application.routes.draw do
   match 'listagem'     => 'activities#show', :as   => :listagem,     :via => 'get'
   match 'sabores'      => 'products#new',    :as   => :sabores
   match 'listasabores' => 'products#show',   :as   => :listasabores, :via => 'get'
-
+  match 'editasabor/:id' => 'products#edit', :as => :editasabor,   :via => 'get'
+  match 'updatesabor/:id' => 'products#update',   :as   => :updatesabor, :via => 'put'
+  
   root :to => 'activities#home'
 
   # The priority is based upon order of creation:

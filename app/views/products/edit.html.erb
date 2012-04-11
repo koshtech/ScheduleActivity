@@ -1,0 +1,6 @@
+<h1>Editando o sabor</h1>
+<%= form_for(@product, :url => updatesabor_path, :html => { :method => "put" }) do |f| %>
+	<b>Torta de: </b> <%= f.text_field :flavor %><br>
+	<b>Descricao:<b> <%= f.text_field :description %><br>
+	<%= f.submit "Edita sabor",  class: "btn btn-large btn-primary" %> 
+<% end %>
