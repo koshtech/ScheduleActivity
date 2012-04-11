@@ -21,7 +21,7 @@
 			Quantidade de tortas:
 			<%= f.text_field :productQuantity %>
 			Data e hora da entrega: 
-			<%= f.datetime_select :date_time, 
+			<%= f.datetime_select :date_time, 	
 							  :use_month_numbers => true,
 							  :order => [:day, :month, :year],
 							  :default => Time.now,
