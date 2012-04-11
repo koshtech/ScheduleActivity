@@ -3,4 +3,5 @@
 	<b>Torta de: </b> <%= f.text_field :flavor %><br>
 	<b>Descricao:<b> <%= f.text_field :description %><br>
 	<%= f.submit "Edita sabor",  class: "btn btn-large btn-primary" %> 
-<% end %>
+<% end %><br>
+<%= link_to "DESTROOOOY", destroy_path(params[:id]), :method => :delete %>

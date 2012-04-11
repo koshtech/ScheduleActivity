@@ -3,12 +3,13 @@ ScheduleActivity::Application.routes.draw do
   resource :activities
   resource :products
 
-  match 'reservas'     => 'activities#new',  :as   => :reservas
-  match 'listagem'     => 'activities#show', :as   => :listagem,     :via => 'get'
-  match 'sabores'      => 'products#new',    :as   => :sabores
-  match 'listasabores' => 'products#show',   :as   => :listasabores, :via => 'get'
-  match 'editasabor/:id' => 'products#edit', :as => :editasabor,   :via => 'get'
-  match 'updatesabor/:id' => 'products#update',   :as   => :updatesabor, :via => 'put'
+  match 'reservas'        => 'activities#new',    :as   => :reservas
+  match 'listagem'        => 'activities#show',   :as   => :listagem,     :via => 'get'
+  match 'sabores'         => 'products#new',      :as   => :sabores
+  match 'listasabores'    => 'products#show',     :as   => :listasabores, :via => 'get'
+  match 'editasabor/:id'  => 'products#edit',     :as   => :editasabor,   :via => 'get'
+  match 'updatesabor/:id' => 'products#update',   :as   => :updatesabor,  :via => 'put'
+  match 'destroy/:id'     => 'products#destroy',  :as   => :destroy,      :via => 'delete'
   
   root :to => 'activities#home'
 

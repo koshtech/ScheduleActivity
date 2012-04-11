@@ -28,4 +28,11 @@ class ProductsController < ApplicationController
       redirect_to listasabores_path
     end
   end
+
+  def destroy
+    Product.destroy(params[:id])
+    redirect_to listasabores_path
+  end
+
+
 end
