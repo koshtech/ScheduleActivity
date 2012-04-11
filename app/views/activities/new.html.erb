@@ -16,10 +16,10 @@
 	<div class="span6 offset">
 		<%= form_for(@activity) do |f| %>
 			Sabor da torta: 
-			<%= f.collection_select(:product, @products, :id, :flavor, {:prompt => ''}, {:required => true}) %>
+			<%= f.collection_select(:product, @products, :flavor, :flavor, {:prompt => ''}, {:required => true}) %>
 			<br>
 			Quantidade de tortas:
-			<%= f.text_field :productQuantity %>
+			<%= f.text_field :productQuantity %><br>
 			Data e hora da entrega: 
 			<%= f.datetime_select :date_time, 	
 							  :use_month_numbers => true,

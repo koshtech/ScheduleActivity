@@ -1,8 +1,7 @@
  FactoryGirl.define do
  	factory :activity do
 	    product          "Batata"
-	    date             "15/04/2012"
-	    time             "15:30"
+	    date_time        "15/04/2012 15:30"
 	    clientName       "Ze das couves"
 	    clientAddress    "Rua das laranjeiras"
 	    clientTelephone  "12345678"

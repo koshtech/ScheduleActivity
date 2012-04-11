@@ -1,10 +1,13 @@
 <h1>Listagem de Reservas</h1>
 <% @activities.each do |activity|  %>
-<h2><%= activity.product %></h2>
-<h2><%= activity.productQuantity %></h2>
-<h2><%= activity.date_time %></h2>
-<h2><%= activity.clientName %></h2>
-<h2><%= activity.clientAddress %></h2>
-<h2><%= activity.clientTelephone %></h2>
-<h2><%= activity.clientEmail %></h2>
+	<h2>Reserva número: <%= activity.id %></h2>
+	<ul>
+		<li><b>Sabor da Torta:</b> <%= activity.product %></li>
+		<li><b>Quantidade de Tortas:</b> <%= activity.productQuantity %></li>
+		<li><b>Data e Hora da Reserva:</b> <%= activity.date_time %></li>
+		<li><b>Nome do Cliente:</b> <%= activity.clientName %></li>
+		<li><b>Endereço do Cliente:</b> <%= activity.clientAddress %></li>
+		<li><b>Telefone do Cliente:</b> <%= activity.clientTelephone %></li>
+		<li><b>Email do cliente:</b> <%= activity.clientEmail %></li>
+	</ul>
 <% end %>

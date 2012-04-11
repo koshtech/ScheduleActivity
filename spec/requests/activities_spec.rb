@@ -8,9 +8,8 @@ describe "Activities" do
 
   	describe "with valid information" do  
       before do
-        fill_in "activity_product",         with: "Chocolate"
-        fill_in "activity_date",            with: "15/04/2012"
-        fill_in "activity_time",            with: "15:30"
+        fill_in "activity_product",          with: "Morango"
+        fill_in "activity_date_tim",        with: "15/04/2012 15:30"
         fill_in "activity_clientName",      with: "Ze das couves"
         fill_in "activity_clientAddress",   with: "Rua das laranjeiras"
         fill_in "activity_clientTelephone", with: "12345678"
@@ -28,7 +27,7 @@ describe "Activities" do
     let(:activity) { FactoryGirl.create(:activity) }
     before { visit listagem_path(activity) }
     
-    it { should have_selector('h2', text: activity.product) }
+    it { should have_selector('li', text: activity.product) }
   end
 
 end
