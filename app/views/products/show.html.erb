@@ -4,4 +4,6 @@
 	<h2>Torta de <%= product.flavor %></h2>
 	<h3>Descricao: <%= product.description %></h3>
 	<br><br>
+<%= link_to "Edita sabor", editasabor_path(product) %> ||
+<%= link_to "Deleta sabor", destroy_path(product), :method => :delete, :confirm => "Tem certeza?" %>
 <% end %>
