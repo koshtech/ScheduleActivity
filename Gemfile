@@ -8,6 +8,7 @@ gem 'bootstrap-sass'
 group :development, :test do
     gem 'sqlite3'
     gem 'rspec-rails'
+    gem 'devise'
 end
 
 # Gems used only for assets and not required

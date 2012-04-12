@@ -1,5 +1,7 @@
 ScheduleActivity::Application.routes.draw do
 
+  devise_for :users
+
   resource :activities
   resource :products
 

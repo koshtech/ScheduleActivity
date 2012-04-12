@@ -15,14 +15,25 @@
               <li><%= link_to "Home",    root_path %></li>
               <li><%= link_to "Reserva de Torta",    reservas_path %></li>
               <li><%= link_to "Lista de sabores", listasabores_path %></li>
-              <li><%= link_to "Sign in", '#' %></li>
+              <!-- <li><%#= link_to "Sign in", '#' %></li> -->
+              <% if user_signed_in? %>
+                <li>Ola <%= current_user.login %>. Não é você?
+                <%= link_to 'Sair', destroy_user_session_path %></li>
+                </br>
+                <%#= link_to 'Post', posts_path %>
+              <% else %>
+                <li><%= link_to 'Cadastrar', new_user_registration_path %>
+                  <%= link_to 'Logar', new_user_session_path %></li>
+              <% end %>  
             </ul>
           </nav>
         </div>
       </div>
     </header>
     <div class="container">
-		<%= yield %>
+		<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
 	</div>
 
 </body>
