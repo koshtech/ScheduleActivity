@@ -11,7 +11,8 @@ class ActivitiesController < ApplicationController
 	@activity = Activity.new(params[:activity])
   @products = Product.all
   if @activity.save
-		redirect_to(root_path, :notice => "Reserva criada com sucesso")
+		ConfirmMailer.activity_confirmation.deliver
+    redirect_to(root_path, :notice => "Reserva criada com sucesso")
 	else
 		render :new
 	end

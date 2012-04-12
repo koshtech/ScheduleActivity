@@ -13,11 +13,11 @@
           <nav>
             <ul class="nav pull-right">
               <li><%= link_to "Home",    root_path %></li>
-                <li><%= link_to "Lista de Reservas", listagem_path %></li>
-                <li><%= link_to "Cadastrar sabores", sabores_path %></li>
                 <li><%= link_to "Reserva de Torta",    reservas_path %></li>
                 <li><%= link_to "Lista de sabores", listasabores_path %></li>
               <% if user_signed_in? %>
+                <li><%= link_to "Lista de Reservas", listagem_path %></li>
+                <li><%= link_to "Cadastrar sabores", sabores_path %></li>
                 <li>Ola <%= current_user.login %>.</li>
                 <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete%></li>
               <% else %>
